@@ -1,0 +1,38 @@
+2016/01/23 17:08:13 [main.go:15] [I] path=> /admin/ssh/join/ 
+2016/01/23 17:08:13 [main.go:16] [I] params=> map[] 
+2016/01/23 17:08:13 [admin.go:282] [I] agentId join 
+2016/01/23 17:08:13 [router.go:854] [D] | GET        | /admin/ssh/join/                         | 114.03818ms      | match      | /admin/ssh/:agentId                      | 
+2016/01/23 17:08:20 [main.go:14] [I] ============================================================== 
+2016/01/23 17:08:20 [main.go:15] [I] path=> /admin/index 
+2016/01/23 17:08:20 [main.go:16] [I] params=> map[] 
+2016/01/23 17:08:20 [router.go:854] [D] | GET        | /admin/index                             | 55.688821ms      | match      | /admin/index                             | 
+2016/01/23 17:08:22 [main.go:14] [I] ============================================================== 
+2016/01/23 17:08:22 [main.go:15] [I] path=> /admin/ssh/index_v4.html 
+2016/01/23 17:08:22 [main.go:16] [I] params=> map[] 
+2016/01/23 17:08:22 [admin.go:282] [I] agentId index_v4.html 
+2016/01/23 17:08:22 [router.go:854] [D] | GET        | /admin/ssh/index_v4.html                 | 69.940205ms      | match      | /admin/ssh/:agentId                      | 
+2016/01/23 17:08:22 [main.go:14] [I] ============================================================== 
+2016/01/23 17:08:22 [main.go:15] [I] path=> /admin/ssh/join/ 
+2016/01/23 17:08:22 [main.go:16] [I] params=> map[] 
+2016/01/23 17:08:22 [admin.go:282] [I] agentId join 
+2016/01/23 17:08:22 [router.go:854] [D] | GET        | /admin/ssh/join/                         | 80.724553ms      | match      | /admin/ssh/:agentId                      | 
+2016/01/23 17:08:24 [main.go:14] [I] ============================================================== 
+2016/01/23 17:08:24 [main.go:15] [I] path=> /admin/ssh/list 
+2016/01/23 17:08:24 [main.go:16] [I] params=> map[] 
+2016/01/23 17:08:24 [router.go:854] [D] | GET        | /admin/ssh/list                          | 235.433156ms     | match      | /admin/ssh/list                          | 
+2016/01/23 17:08:25 [main.go:14] [I] ============================================================== 
+2016/01/23 17:08:25 [main.go:15] [I] path=> /admin/ssh/img/profile_small.jpg 
+2016/01/23 17:08:25 [main.go:16] [I] params=> map[] 
+2016/01/23 17:08:25 [main.go:14] [I] ============================================================== 
+2016/01/23 17:08:25 [main.go:15] [I] path=> /admin/ssh/img/a7.jpg 
+2016/01/23 17:08:25 [main.go:16] [I] params=> map[] 
+2016/01/23 17:08:25 [main.go:14] [I] ============================================================== 
+2016/01/23 17:08:25 [main.go:15] [I] path=> /admin/ssh/img/a4.jpg 
+2016/01/23 17:08:25 [main.go:16] [I] params=> map[] 
+2016/01/23 17:08:25 [router.go:854] [D] | GET        | /admin/ssh/img/profile_small.jpg         | 79.78872ms       | notmatch   | 
+2016/01/23 17:08:25 [main.go:14] [I] ============================================================== 
+2016/01/23 17:08:25 [main.go:15] [I] path=> /admin/index 
+2016/01/23 17:08:25 [main.go:16] [I] params=> map[] 
+2016/01/23 17:08:25 [router.go:854] [D] | GET        | /admin/ssh/img/a7.jpg                    | 97.950516ms      | notmatch   | 
+2016/01/23 17:08:25 [router.go:854] [D] | GET        | /admin/ssh/img/a4.jpg                    | 96.989825ms      | notmatch   | 
+2016/01/23 17:08:25 [router.go:854] [D] | GET        | /admin/index                             | 61.211973ms      | match      | /admin/index                             | 

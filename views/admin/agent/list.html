@@ -1,0 +1,125 @@
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>远程机器配置列表</h5>
+
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-wrench"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="#">选项 01</a>
+                                    </li>
+                                    <li><a href="#">选项 02</a>
+                                    </li>
+                                </ul>
+                                <a class="close-link">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="">
+                           <!--  <a onclick="fnClickAddRow();" href="javascript:void(0);" class="btn btn-primary ">添加行</a> -->
+                            <a href="{{urlfor "AdminController.AgentOperate"}}" class="btn btn-primary ">新增远程机器</a>
+                        </div>
+                            <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="8">
+                                <thead>
+                                <tr>
+                                    <th data-toggle="true">编号</th>
+                                    <th>备注</th>
+                                    <th>HOST</th>
+                                    <th>PORT</th>
+                                    <th>登录用户</th>
+                                    <th>登录密码</th>
+                                    <th>登录初始化操作</th>
+                                    <th>创建时间</th>
+                                    <th data-hide="all">脚本列表</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {{range $index, $elem := .Agents}}
+                                <tr class="gradeX">
+                                    <td>{{$index}}</td>
+                                    <td>{{$elem.Memo}}</td>
+                                    <td>{{$elem.Host}}</td>
+                                    <td>{{$elem.Port}}</td>
+                                    <td>{{$elem.LoginName}}</td>
+                                    <td>{{$elem.LoginPass}}</td>
+                                    <td class="center">{{$elem.InitShellCmd}}</td>
+                                    <td class="center">{{date $elem.GmtCreated "Y-m-d H:i:s"}}</td>
+                                    <td class="center">
+                                        <ul class="list-group">
+                                            {{range $ind, $cmd := $elem.GetCmds}}
+                                        <li class="list-group-item">
+                                            <span class="badge badge-primary">{{$ind}}</span> {{$cmd.Shell}}
+                                            <a href="/admin/agent/{{$elem.Id}}/cmd/operate/{{$cmd.Id}}"><i class="fa fa-paste" >编辑</i></a>
+                                            <a href="/admin/agent/cmd/delete/{{$cmd.Id}}"><i class="fa fa-warning" >删除</i></a><br/>
+                                        </li>
+                                             {{end}}
+                                    </ul>
+
+
+                                        <a href="/admin/agent/{{$elem.Id}}/cmd/operate"><button class="btn btn-primary" type="button" style="font-size:10px;" ><i class="fa fa-check" ></i> 新增cmd</button></a>
+                                    </td>
+                                    <th>
+                                        <a href="#"><button class="btn btn-primary" type="button" style="font-size:10px;"><i class="fa fa-check"></i> 查看</button></a>
+
+                                        <a href="/admin/agent/operate/{{$elem.Id}}"><button class="btn btn-info " type="button" style="font-size:10px;"><i class="fa fa-paste"></i> 编辑</button></a>
+
+                                        <a href="javascript:void(0)"><button class="btn btn-warning" type="button" style="font-size:10px;" name="/admin/agent/delete/{{$elem.Id}}" ><i class="fa fa-warning" ></i> 删除</button></a>
+
+                                         <a href="/admin/ssh/{{$elem.Id}}" target="_blank"><button class="btn btn-primary" type="button" style="font-size:10px;"><i class="fa fa-code-fork"></i> 连接远程</button></a>
+
+                                        </th>
+                                </tr>
+                                {{end}}
+
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td colspan="5">
+                                        <ul class="pagination pull-right"></ul>
+                                    </td>
+                                </tr>
+                                </tfoot>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+{{template "contain/main_script.html" .}}
+     <script>
+        $(document).ready(function() {
+
+            $('.footable').footable();
+
+        });
+
+        $('.btn-warning').click(function () {
+            var url = this.name
+            swal({
+                title: "您确定要删除这条信息吗",
+                text: "删除后将无法恢复，请谨慎操作！",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "删除",
+                closeOnConfirm: false
+            }, function () {
+                swal("删除成功！", "您已经永久删除了这条信息。", "success");
+                location.href=url
+            });
+        });
+    </script>

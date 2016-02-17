@@ -1,0 +1,248 @@
+
+    <div class="wrapper wrapper-content  animated fadeInRight">
+        {{if .Admin}}
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-content">
+                            <div class="wrapper wrapper-content animated fadeInRight">
+
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <h5>API配置列表</h5>
+
+                                    <div class="ibox-tools">
+                                        <a class="collapse-link">
+                                            <i class="fa fa-chevron-up"></i>
+                                        </a>
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                            <i class="fa fa-wrench"></i>
+                                        </a>
+                                        <a class="close-link">
+                                            <i class="fa fa-times"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="ibox-content">
+                                    <div class="">
+                                    <a href="/admin/server/operate" class="btn btn-primary ">新增api配置</a>
+                                </div>
+                                    <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="8">
+                                        <thead>
+                                        <tr>
+                                            <th data-toggle="true">编号</th>
+                                            <th>主题</th>
+                                            <!-- <th>内容</th> -->
+                                            <th data-hide="all">共享链接</th>
+                                            <th>创建时间</th>
+                                            <th>操作</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {{range $index, $elem := .Servers}}
+                                        <tr class="gradeX">
+                                            <td>{{$index}}</td>
+                                            <td>{{$elem.Theme}}</td>
+                                            <td><a href="/guest/server/share/{{$elem.Id}}" target="_blank">打开再复制</a></td>
+                                            <!-- <td>{{$elem.Content}}</td> -->
+                                            <td class="center">{{date $elem.GmtCreated "Y-m-d H:i:s"}}</td>
+                                            <th>
+                                                <a href="/admin/server/index/{{$elem.Id}}"><button class="btn btn-primary" type="button" style="font-size:10px;"><i class="fa fa-check"></i> 查看</button></a>
+
+                                                <a href="/admin/server/operate/{{$elem.Id}}"><button class="btn btn-info " type="button" style="font-size:10px;"><i class="fa fa-paste"></i> 编辑</button></a>
+
+                                                <a href="javascript:void(0)"><button class="btn btn-warning del" type="button" style="font-size:10px;" name="/admin/server/delete/{{$elem.Id}}" ><i class="fa fa-warning" ></i> 删除</button></a>
+
+                                                </th>
+                                        </tr>
+                                        {{end}}
+
+                                        </tbody>
+                                        <tfoot>
+                                        <tr>
+                                            <td colspan="5">
+                                                <ul class="pagination pull-right"></ul>
+                                            </td>
+                                        </tr>
+                                        </tfoot>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{end}}
+
+        {{if .Server.Id}}
+        <div class="row">
+            <div class="col-sm-6">
+
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>{{.Server.Theme}}  <small>API列表</small></h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="jstree">
+                            <ul>
+                                <li class="jstree-open">{{.JsonBody.Name}}
+                                    <ul>
+                                        {{range $item := .JsonBody.Lists}}
+                                        <li class="jstree-open">{{$item.Folder}}
+                                            <ul>
+                                                {{range $apiParam := $item.ApiParams}}
+                                                <li data-jstree='{"type":"html"}' name="/active/{{$apiParam.Id}}">{{$apiParam.Name}}&nbsp;&nbsp;{{$apiParam.Path}}</li>
+                                                {{end}}
+                                            </ul>
+                                         </li>
+                                        {{end}}
+
+
+                                       <!--  <li data-jstree='{"type":"html"}'>affix.html</li>
+                                        <li data-jstree='{"type":"html"}'>dashboard.html</li>
+                                        <li data-jstree='{"type":"html"}'>buttons.html</li>
+                                        <li data-jstree='{"type":"html"}'>calendar.html</li>
+                                        <li data-jstree='{"type":"html"}'>contacts.html</li> -->
+
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6" style="height: 1000px;">
+                <iframe id="active" src="/guest/server/info" width="100%" height="500px" frameborder="0"></iframe>
+            </div>
+        </div>
+        {{end}}
+
+    </div>
+
+    {{template "contain/main_script.html" .}}
+
+    <style>
+        .jstree-open > .jstree-anchor > .fa-folder:before {
+            content: "\f07c";
+        }
+
+        .jstree-default .jstree-icon.none {
+            width: 0;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function() {
+            $("#jstree").jstree({
+                "core": {
+                    "check_callback": true
+                },
+                "plugins": ["types", "dnd"],
+                "types": {
+                    "default": {
+                        "icon": "fa fa-folder"
+                    },
+                    "html": {
+                        "icon": "fa fa-file-code-o"
+                    },
+                    "svg": {
+                        "icon": "fa fa-file-picture-o"
+                    },
+                    "css": {
+                        "icon": "fa fa-file-code-o"
+                    },
+                    "img": {
+                        "icon": "fa fa-file-image-o"
+                    },
+                    "js": {
+                        "icon": "fa fa-file-text-o"
+                    }
+                }
+            });
+
+        });
+
+        $('#jstree').on("changed.jstree", function (e, data) {
+          // console.log(data.selected);
+
+          var ipath = data.node.li_attr.name;
+          console.log(ipath);
+          var path = "/guest/server/{{.Server.Id}}";
+          if(ipath) {
+                $('#active').attr("src",path + ipath);
+          }
+
+        });
+
+          $('.del').click(function () {
+            var url = this.name
+            swal({
+                title: "您确定要删除这条信息吗",
+                text: "删除后将无法恢复，请谨慎操作！",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "删除",
+                closeOnConfirm: false
+            }, function () {
+                swal("删除成功！", "您已经永久删除了这条信息。", "success");
+                location.href=url
+            });
+        });
+
+
+          function ifrmLoadedDoSubmit(ifdata) {
+            // code here
+            $.post("/guest/server/xx/active/xx",
+                ifdata,
+                function(data){
+                    if(data.r_code==1) {
+                        var format_str = data.data.resp.replace(/,/g,",<br/>").replace(/，/g,"，<br/>");
+                        format_str = format_str.replace(/{/g,"{<br/>").replace(/}/g,"}<br/>");
+                        // format_str = format_str.replace(/[/g,"[<br/>").replace(/]/g,"]<br/>");
+                        swal({
+                            title: "成功",
+                            text: format_str.trim('"'),
+                            animation: "slide-from-top",
+                            html: true,
+                            type: "success"
+                        });
+                    } else {
+                        swal({
+                            title: "失败",
+                            text: data.r_msg,
+                            animation: "slide-from-top",
+                            type: "error"
+                        });
+
+                        // alert('通讯错误'+data.r_msg)
+                    }
+
+                }
+            );
+        }
+
+
+    </script>
+
+
+
+</html>

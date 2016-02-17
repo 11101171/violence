@@ -1,0 +1,80 @@
+
+        <div class="row">
+            <div>
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        {{if .AgentForm.Id}}<h5>修改ssh</h5>{{else}}<h5>添加ssh</h5>{{end}}
+                                                <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form class="form-horizontal m-t" action="{{urlfor "AdminController.AgentOperate"}}" method="post">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">备注</label>
+                                <div class="col-sm-8">
+                                    <input id="memo" name="Memo" class="form-control" type="text" aria-required="true" aria-invalid="true" class="error" value="{{.AgentForm.Memo}}{{.ErrorForm.Memo}}" >
+                                    {{VaildError "Memo-message" .ErrorMap}}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">地址Host</label>
+                                <div class="col-sm-8">
+                                    <input id="host" name="Host" class="form-control" type="text" aria-required="true" aria-invalid="true" class="error" value="{{.AgentForm.Host}}{{.ErrorForm.Host}}" >
+                                    {{VaildError "Host-message" .ErrorMap}}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">端口Port:</label>
+                                <div class="col-sm-8">
+                                    <input id="port" name="Port" class="form-control" type="text" aria-required="true" aria-invalid="true" class="error" value="{{.AgentForm.Port}}{{.ErrorForm.Port}}" >
+                                    {{VaildError "Port-message" .ErrorMap}}
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">登录用户:</label>
+                                <div class="col-sm-8">
+                                    <input id="loginName" name="LoginName" class="form-control" type="text" aria-required="true" aria-invalid="true" class="error" value="{{.AgentForm.LoginName}}{{.ErrorForm.LoginName}}" >
+                                    {{VaildError "LoginName-message" .ErrorMap}}
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">登录密码:</label>
+                                <div class="col-sm-8">
+                                    <input id="loginPass" name="LoginPass" class="form-control" type="text" aria-required="true" aria-invalid="true" class="error" value="{{.AgentForm.LoginPass}}{{.ErrorForm.LoginPass}}" >
+                                    {{VaildError "LoginPass-message" .ErrorMap}}
+                                </div>
+                            </div>
+
+                             <div class="form-group">
+                                <label class="col-sm-3 control-label">初始化操作:</label>
+                                <div class="col-sm-8">
+                                    <input id="initShellCmd" name="InitShellCmd" class="form-control" type="text" aria-required="true" aria-invalid="true" class="error" value="{{.AgentForm.InitShellCmd}}{{.ErrorForm.InitShellCmd}}" >
+                                    {{VaildError "InitShellCmd-message" .ErrorMap}}
+                                </div>
+                            </div>
+                            {{if .AgentForm.Id}}
+                                <input type="hidden" value="{{.AgentForm.Id}}" name="Id">
+                            {{end}}
+                            <div class="form-group">
+                                <div class="col-sm-8 col-sm-offset-3">
+                                    <button class="btn btn-primary" type="submit">提交</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+{{template "contain/main_script.html" .}}

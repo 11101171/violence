@@ -1,0 +1,42 @@
+
+        <div class="row">
+            <div>
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        {{if .CmdForm.Id}}<h5>修改cmd</h5>{{else}}<h5>添加cmd</h5>{{end}}
+                                                <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form class="form-horizontal m-t" action="{{urlfor "AdminController.CmdOperate"}}" method="post">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">脚本代码</label>
+                                <div class="col-sm-8">
+                                    <textarea id="shell" name="Shell" class="form-control help-block m-b-none" required="" aria-required="true" aria-invalid="false" aria-describedby="ccomment-error">{{.CmdForm.Shell}}{{.ErrorForm.Shell}}</textarea>
+                                   <!--  <input id="shell" name="Shell" class="form-control" type="text" aria-required="true" aria-invalid="true" class="error" value="{{.CmdForm.Shell}}{{.ErrorForm.Shell}}" > -->
+                                    {{VaildError "Shell-message" .ErrorMap}}
+                                </div>
+                            </div>
+
+
+                            {{if .CmdForm.Id}}
+                                <input type="hidden" value="{{.CmdForm.Id}}" name="Id">
+                            {{end}}
+                             <input type="hidden" name="AgentId" value="{{.CmdForm.AgentId}}"  />
+                            <div class="form-group">
+                                <div class="col-sm-8 col-sm-offset-3">
+                                    <button class="btn btn-primary" type="submit">提交</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+{{template "contain/main_script.html" .}}

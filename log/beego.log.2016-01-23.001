@@ -1,0 +1,108 @@
+2016/01/23 16:31:29 [asm_amd64.s:2232] [I] http server Running on :9099
+2016/01/23 16:31:35 [main.go:14] [I] ============================================================== 
+2016/01/23 16:31:35 [main.go:15] [I] path=> /admin/index 
+2016/01/23 16:31:35 [main.go:16] [I] params=> map[] 
+2016/01/23 16:31:35 [router.go:854] [D] | GET        | /admin/index                             | 221.213µs        | notmatch   | 
+2016/01/23 16:31:35 [main.go:14] [I] ============================================================== 
+2016/01/23 16:31:35 [main.go:15] [I] path=> /auth/login 
+2016/01/23 16:31:35 [main.go:16] [I] params=> map[] 
+2016/01/23 16:31:35 [router.go:854] [D] | GET        | /auth/login                              | 12.342159ms      | match      | /auth/login                              | 
+2016/01/23 16:31:37 [main.go:14] [I] ============================================================== 
+2016/01/23 16:31:37 [main.go:15] [I] path=> /auth/login 
+2016/01/23 16:31:37 [main.go:16] [I] params=> map[Username:[zhong1] Password:[1234qwer]] 
+2016/01/23 16:31:37 [auth.go:62] [D] 登录成功 
+2016/01/23 16:31:37 [router.go:854] [D] | POST       | /auth/login                              | 15.01567ms       | match      | /auth/login                              | 
+2016/01/23 16:31:39 [main.go:14] [I] ============================================================== 
+2016/01/23 16:31:39 [main.go:15] [I] path=> /admin/agent/list 
+2016/01/23 16:31:39 [main.go:16] [I] params=> map[] 
+2016/01/23 16:31:39 [router.go:854] [D] | GET        | /admin/agent/list                        | 14.983255ms      | match      | /admin/agent/list                        | 
+2016/01/23 16:31:41 [main.go:14] [I] ============================================================== 
+2016/01/23 16:31:41 [main.go:15] [I] path=> /admin/server/index 
+2016/01/23 16:31:41 [main.go:16] [I] params=> map[] 
+2016/01/23 16:31:41 [server.go:74] [D] jsonbody rrr大搜车api 
+2016/01/23 16:31:41 [router.go:854] [D] | GET        | /admin/server/index                      | 17.69539ms       | match      | /admin/server/index/?:serverId           | 
+2016/01/23 16:31:41 [main.go:14] [I] ============================================================== 
+2016/01/23 16:31:41 [main.go:15] [I] path=> /guest/server/info 
+2016/01/23 16:31:41 [main.go:16] [I] params=> map[] 
+2016/01/23 16:31:41 [router.go:854] [D] | GET        | /guest/server/info                       | 12.295887ms      | match      | /guest/server/info                       | 
+2016/01/23 16:31:43 [main.go:14] [I] ============================================================== 
+2016/01/23 16:31:43 [main.go:15] [I] path=> /admin/agent/list 
+2016/01/23 16:31:43 [main.go:16] [I] params=> map[] 
+2016/01/23 16:31:43 [router.go:854] [D] | GET        | /admin/agent/list                        | 19.713718ms      | match      | /admin/agent/list                        | 
+2016/01/23 16:31:59 [main.go:14] [I] ============================================================== 
+2016/01/23 16:31:59 [main.go:15] [I] path=> /admin/agent/operate/{{placeholder}} 
+2016/01/23 16:31:59 [main.go:16] [I] params=> map[] 
+2016/01/23 16:31:59 [admin.go:123] [I] agentId {{placeholder}} 
+2016/01/23 16:31:59 [router.go:854] [D] | GET        | /admin/agent/operate/{{placeholder}}     | 17.107111ms      | match      | /admin/agent/operate/?:agentId           | 
+2016/01/23 16:32:33 [main.go:14] [I] ============================================================== 
+2016/01/23 16:32:33 [main.go:15] [I] path=> /admin/agent/operate/{{placeholder}} 
+2016/01/23 16:32:33 [main.go:16] [I] params=> map[LoginName:[souche] LoginPass:[pwd!Z@X@souche2013] InitShellCmd:[echo 'hello'] Memo:[dev] Host:[120.26.78.245] Port:[22]] 
+2016/01/23 16:32:33 [router.go:854] [D] | POST       | /admin/agent/operate/{{placeholder}}     | 16.077553ms      | match      | /admin/agent/operate/?:agentId           | 
+2016/01/23 16:32:35 [main.go:14] [I] ============================================================== 
+2016/01/23 16:32:35 [main.go:15] [I] path=> /admin/agent/list 
+2016/01/23 16:32:35 [main.go:16] [I] params=> map[] 
+2016/01/23 16:32:35 [router.go:854] [D] | GET        | /admin/agent/list                        | 17.505401ms      | match      | /admin/agent/list                        | 
+2016/01/23 16:32:37 [main.go:14] [I] ============================================================== 
+2016/01/23 16:32:37 [main.go:15] [I] path=> /admin/ssh/230133123123012304-agent-AhTi13A33e 
+2016/01/23 16:32:37 [main.go:16] [I] params=> map[] 
+2016/01/23 16:32:37 [admin.go:277] [I] agentId 230133123123012304-agent-AhTi13A33e 
+2016/01/23 16:32:37 [router.go:854] [D] | GET        | /admin/ssh/230133123123012304-agent-AhTi13A33e | 20.354391ms      | match      | /admin/ssh/:agentId                      | 
+2016/01/23 16:32:37 [main.go:14] [I] ============================================================== 
+2016/01/23 16:32:37 [main.go:15] [I] path=> /admin/ssh/join/230133123123012304-agent-AhTi13A33e 
+2016/01/23 16:32:37 [main.go:16] [I] params=> map[] 
+2016/01/23 16:32:37 [sshService.go:122] [D] Login ... 
+2016/01/23 16:32:37 [sshService.go:72] [D] souche 120.26.78.245 
+2016/01/23 16:33:04 [main.go:14] [I] ============================================================== 
+2016/01/23 16:33:04 [main.go:15] [I] path=> /admin/user/list 
+2016/01/23 16:33:04 [main.go:16] [I] params=> map[] 
+2016/01/23 16:33:04 [user.go:157] [E] user 
+2016/01/23 16:33:04 [router.go:854] [D] | GET        | /admin/user/list                         | 19.442764ms      | match      | /admin/user/list                         | 
+2016/01/23 16:33:04 [sshService.go:162] [I] conn.ReadMessage failed: %s
+ websocket: close 1001  
+2016/01/23 16:33:04 [router.go:854] [D] | GET        | /admin/ssh/join/230133123123012304-agent-AhTi13A33e | 26.846152545s    | match      | /admin/ssh/join/:agentId                 | 
+2016/01/23 16:33:10 [main.go:14] [I] ============================================================== 
+2016/01/23 16:33:10 [main.go:15] [I] path=> /admin/user/operate/160127116116011611-user-AwSAImQngQ 
+2016/01/23 16:33:10 [main.go:16] [I] params=> map[] 
+2016/01/23 16:33:10 [admin.go:40] [I] userId 160127116116011611-user-AwSAImQngQ 
+2016/01/23 16:33:10 [router.go:854] [D] | GET        | /admin/user/operate/160127116116011611-user-AwSAImQngQ | 15.23097ms       | match      | /admin/user/operate/?:userId             | 
+2016/01/23 16:33:12 [main.go:14] [I] ============================================================== 
+2016/01/23 16:33:12 [main.go:15] [I] path=> /admin/user/list 
+2016/01/23 16:33:12 [main.go:16] [I] params=> map[] 
+2016/01/23 16:33:12 [user.go:157] [E] user 
+2016/01/23 16:33:12 [router.go:854] [D] | GET        | /admin/user/list                         | 23.593319ms      | match      | /admin/user/list                         | 
+2016/01/23 16:33:14 [main.go:14] [I] ============================================================== 
+2016/01/23 16:33:14 [main.go:15] [I] path=> /admin/user/operate/120141112112011205-user-D3OTxiYGCG 
+2016/01/23 16:33:14 [main.go:16] [I] params=> map[] 
+2016/01/23 16:33:14 [admin.go:40] [I] userId 120141112112011205-user-D3OTxiYGCG 
+2016/01/23 16:33:14 [router.go:854] [D] | GET        | /admin/user/operate/120141112112011205-user-D3OTxiYGCG | 16.564492ms      | match      | /admin/user/operate/?:userId             | 
+2016/01/23 16:33:15 [main.go:14] [I] ============================================================== 
+2016/01/23 16:33:15 [main.go:15] [I] path=> /admin/user/list 
+2016/01/23 16:33:15 [main.go:16] [I] params=> map[] 
+2016/01/23 16:33:15 [user.go:157] [E] user 
+2016/01/23 16:33:15 [router.go:854] [D] | GET        | /admin/user/list                         | 21.51811ms       | match      | /admin/user/list                         | 
+2016/01/23 16:33:32 [main.go:14] [I] ============================================================== 
+2016/01/23 16:33:32 [main.go:15] [I] path=> /admin/agent/list 
+2016/01/23 16:33:32 [main.go:16] [I] params=> map[] 
+2016/01/23 16:33:32 [router.go:854] [D] | GET        | /admin/agent/list                        | 15.251457ms      | match      | /admin/agent/list                        | 
+2016/01/23 16:33:34 [main.go:14] [I] ============================================================== 
+2016/01/23 16:33:34 [main.go:15] [I] path=> /admin/ssh/230133123123012304-agent-AhTi13A33e 
+2016/01/23 16:33:34 [main.go:16] [I] params=> map[] 
+2016/01/23 16:33:34 [admin.go:277] [I] agentId 230133123123012304-agent-AhTi13A33e 
+2016/01/23 16:33:34 [router.go:854] [D] | GET        | /admin/ssh/230133123123012304-agent-AhTi13A33e | 19.681831ms      | match      | /admin/ssh/:agentId                      | 
+2016/01/23 16:33:35 [main.go:14] [I] ============================================================== 
+2016/01/23 16:33:35 [main.go:15] [I] path=> /admin/ssh/join/230133123123012304-agent-AhTi13A33e 
+2016/01/23 16:33:35 [main.go:16] [I] params=> map[] 
+2016/01/23 16:33:35 [sshService.go:122] [D] Login ... 
+2016/01/23 16:33:35 [sshService.go:72] [D] souche 120.26.78.245 
+2016/01/23 16:33:45 [sshService.go:140] [I] Failed to read from pty master: %s EOF 
+2016/01/23 16:33:50 [sshService.go:162] [I] conn.ReadMessage failed: %s
+ websocket: close 1001  
+2016/01/23 16:33:50 [router.go:854] [D] | GET        | /admin/ssh/join/230133123123012304-agent-AhTi13A33e | 15.695026477s    | match      | /admin/ssh/join/:agentId                 | 
+2016/01/23 16:35:01 [asm_amd64.s:2232] [I] http server Running on :9099
+2016/01/23 16:35:42 [asm_amd64.s:2232] [I] http server Running on :9099
+2016/01/23 16:36:32 [asm_amd64.s:2232] [I] http server Running on :9099
+2016/01/23 17:03:26 [template.go:153] [D] parse template err: admin/ssh/list.html template: admin/ssh/list.html:1059: function "imgBase" not defined 
+2016/01/23 17:03:26 [template.go:153] [D] parse template err: layout/main_sidebar.html template: layout/main_sidebar.html:210: function "imgBase" not defined 
+2016/01/23 17:03:26 [asm_amd64.s:2232] [I] http server Running on :9099
+2016/01/23 17:04:30 [template.go:153] [D] parse template err: layout/main_sidebar.html template: layout/main_sidebar.html:210: function "imgBase" not defined 
+2016/01/23 17:04:30 [template.go:153] [D] parse template err: admin/ssh/list.html template: admin/ssh/list.html:1059: function "imgBase" not defined 

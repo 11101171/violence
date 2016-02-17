@@ -1,0 +1,65 @@
+2016/01/26 11:20:10 [main.go:14] [I] ============================================================== 
+2016/01/26 11:20:10 [main.go:15] [I] path=> /auth/login 
+2016/01/26 11:20:10 [main.go:16] [I] params=> map[Username:[zhong1] Password:[1234qwer]] 
+2016/01/26 11:20:10 [auth.go:62] [D] 登录成功 
+2016/01/26 11:20:10 [router.go:854] [D] | POST       | /auth/login                              | 54.179317ms      | match      | /auth/login                              | 
+2016/01/26 11:20:13 [main.go:14] [I] ============================================================== 
+2016/01/26 11:20:13 [main.go:15] [I] path=> /admin/index 
+2016/01/26 11:20:13 [main.go:16] [I] params=> map[] 
+2016/01/26 11:20:13 [router.go:854] [D] | GET        | /admin/index                             | 19.446432ms      | match      | /admin/index                             | 
+2016/01/26 11:20:16 [main.go:14] [I] ============================================================== 
+2016/01/26 11:20:16 [main.go:15] [I] path=> /admin/server/index 
+2016/01/26 11:20:16 [main.go:16] [I] params=> map[] 
+2016/01/26 11:20:16 [server.go:74] [D] jsonbody rrr大搜车api 
+2016/01/26 11:20:16 [router.go:854] [D] | GET        | /admin/server/index                      | 26.467262ms      | match      | /admin/server/index/?:serverId           | 
+2016/01/26 11:20:16 [main.go:14] [I] ============================================================== 
+2016/01/26 11:20:16 [main.go:15] [I] path=> /guest/server/info 
+2016/01/26 11:20:16 [main.go:16] [I] params=> map[] 
+2016/01/26 11:20:16 [router.go:854] [D] | GET        | /guest/server/info                       | 12.330273ms      | match      | /guest/server/info                       | 
+2016/01/26 11:20:17 [main.go:14] [I] ============================================================== 
+2016/01/26 11:20:17 [main.go:15] [I] path=> /admin/agent/list 
+2016/01/26 11:20:17 [main.go:16] [I] params=> map[] 
+2016/01/26 11:20:17 [router.go:854] [D] | GET        | /admin/agent/list                        | 18.933371ms      | match      | /admin/agent/list                        | 
+2016/01/26 11:20:18 [main.go:14] [I] ============================================================== 
+2016/01/26 11:20:18 [main.go:15] [I] path=> /admin/user/list 
+2016/01/26 11:20:18 [main.go:16] [I] params=> map[] 
+2016/01/26 11:20:18 [user.go:157] [E] user 
+2016/01/26 11:20:18 [router.go:854] [D] | GET        | /admin/user/list                         | 18.583236ms      | match      | /admin/user/list                         | 
+2016/01/26 13:59:16 [main.go:14] [I] ============================================================== 
+2016/01/26 13:59:16 [main.go:15] [I] path=> /admin/index 
+2016/01/26 13:59:16 [main.go:16] [I] params=> map[] 
+2016/01/26 13:59:16 [router.go:854] [D] | GET        | /admin/index                             | 1.093407ms       | notmatch   | 
+2016/01/26 13:59:16 [main.go:14] [I] ============================================================== 
+2016/01/26 13:59:16 [main.go:15] [I] path=> /auth/login 
+2016/01/26 13:59:16 [main.go:16] [I] params=> map[] 
+2016/01/26 13:59:16 [router.go:854] [D] | GET        | /auth/login                              | 18.196124ms      | match      | /auth/login                              | 
+2016/01/26 13:59:19 [main.go:14] [I] ============================================================== 
+2016/01/26 13:59:19 [main.go:15] [I] path=> /auth/login 
+2016/01/26 13:59:19 [main.go:16] [I] params=> map[Username:[zhong1] Password:[1234qwer]] 
+2016/01/26 13:59:19 [auth.go:62] [D] 登录成功 
+2016/01/26 13:59:19 [router.go:854] [D] | POST       | /auth/login                              | 17.314034ms      | match      | /auth/login                              | 
+2016/01/26 13:59:27 [main.go:14] [I] ============================================================== 
+2016/01/26 13:59:27 [main.go:15] [I] path=> /admin/index 
+2016/01/26 13:59:27 [main.go:16] [I] params=> map[] 
+2016/01/26 13:59:27 [router.go:854] [D] | GET        | /admin/index                             | 17.195478ms      | match      | /admin/index                             | 
+2016/01/26 16:26:01 [main.go:14] [I] ============================================================== 
+2016/01/26 16:26:01 [main.go:15] [I] path=> /admin/index 
+2016/01/26 16:26:01 [main.go:16] [I] params=> map[] 
+2016/01/26 16:26:01 [router.go:854] [D] | GET        | /admin/index                             | 1.151883ms       | notmatch   | 
+2016/01/26 16:26:01 [main.go:14] [I] ============================================================== 
+2016/01/26 16:26:01 [main.go:15] [I] path=> /auth/login 
+2016/01/26 16:26:01 [main.go:16] [I] params=> map[] 
+2016/01/26 16:26:01 [router.go:854] [D] | GET        | /auth/login                              | 20.483566ms      | match      | /auth/login                              | 
+2016/01/26 16:26:04 [main.go:14] [I] ============================================================== 
+2016/01/26 16:26:04 [main.go:15] [I] path=> /auth/login 
+2016/01/26 16:26:04 [main.go:16] [I] params=> map[] 
+2016/01/26 16:26:04 [router.go:854] [D] | GET        | /auth/login                              | 15.731701ms      | match      | /auth/login                              | 
+2016/01/26 19:51:14 [main.go:14] [I] ============================================================== 
+2016/01/26 19:51:14 [main.go:15] [I] path=> /auth/login 
+2016/01/26 19:51:14 [main.go:16] [I] params=> map[Username:[zhong1] Password:[1234qwer]] 
+2016/01/26 19:51:14 [auth.go:62] [D] 登录成功 
+2016/01/26 19:51:14 [router.go:854] [D] | POST       | /auth/login                              | 30.245639ms      | match      | /auth/login                              | 
+2016/01/26 19:51:17 [main.go:14] [I] ============================================================== 
+2016/01/26 19:51:17 [main.go:15] [I] path=> /admin/index 
+2016/01/26 19:51:17 [main.go:16] [I] params=> map[] 
+2016/01/26 19:51:17 [router.go:854] [D] | GET        | /admin/index                             | 19.831645ms      | match      | /admin/index                             | 

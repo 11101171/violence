@@ -1,0 +1,97 @@
+2016/01/23 17:04:30 [asm_amd64.s:2232] [I] http server Running on :9099
+2016/01/23 17:05:11 [main.go:14] [I] ============================================================== 
+2016/01/23 17:05:11 [main.go:15] [I] path=> /admin/index 
+2016/01/23 17:05:11 [main.go:16] [I] params=> map[] 
+2016/01/23 17:05:11 [router.go:854] [D] | GET        | /admin/index                             | 166.673µs        | notmatch   | 
+2016/01/23 17:05:11 [main.go:14] [I] ============================================================== 
+2016/01/23 17:05:11 [main.go:15] [I] path=> /auth/login 
+2016/01/23 17:05:11 [main.go:16] [I] params=> map[] 
+2016/01/23 17:05:11 [template.go:153] [D] parse template err: admin/ssh/list.html template: admin/ssh/list.html:1059: function "imgBase" not defined 
+2016/01/23 17:05:11 [template.go:153] [D] parse template err: layout/main_sidebar.html template: layout/main_sidebar.html:210: function "imgBase" not defined 
+2016/01/23 17:05:11 [router.go:854] [D] | GET        | /auth/login                              | 15.380387ms      | match      | /auth/login                              | 
+2016/01/23 17:05:13 [main.go:14] [I] ============================================================== 
+2016/01/23 17:05:13 [main.go:15] [I] path=> /auth/login 
+2016/01/23 17:05:13 [main.go:16] [I] params=> map[Username:[zhong1] Password:[1234qwer]] 
+2016/01/23 17:05:13 [auth.go:62] [D] 登录成功 
+2016/01/23 17:05:13 [template.go:153] [D] parse template err: admin/ssh/list.html template: admin/ssh/list.html:1059: function "imgBase" not defined 
+2016/01/23 17:05:13 [template.go:153] [D] parse template err: layout/main_sidebar.html template: layout/main_sidebar.html:210: function "imgBase" not defined 
+2016/01/23 17:05:13 [router.go:854] [D] | POST       | /auth/login                              | 17.94907ms       | match      | /auth/login                              | 
+2016/01/23 17:05:14 [main.go:14] [I] ============================================================== 
+2016/01/23 17:05:14 [main.go:15] [I] path=> /admin/index 
+2016/01/23 17:05:14 [main.go:16] [I] params=> map[] 
+2016/01/23 17:05:14 [template.go:153] [D] parse template err: layout/main_sidebar.html template: layout/main_sidebar.html:210: function "imgBase" not defined 
+2016/01/23 17:05:14 [template.go:153] [D] parse template err: admin/ssh/list.html template: admin/ssh/list.html:1059: function "imgBase" not defined 
+2016/01/23 17:05:14 [router.go:854] [D] | GET        | /admin/index                             | 18.59584ms       | match      | /admin/index                             | 
+2016/01/23 17:05:16 [main.go:14] [I] ============================================================== 
+2016/01/23 17:05:16 [main.go:15] [I] path=> /admin/ssh/list 
+2016/01/23 17:05:16 [main.go:16] [I] params=> map[] 
+2016/01/23 17:05:16 [template.go:153] [D] parse template err: admin/ssh/list.html template: admin/ssh/list.html:1059: function "imgBase" not defined 
+2016/01/23 17:05:16 [template.go:153] [D] parse template err: layout/main_sidebar.html template: layout/main_sidebar.html:210: function "imgBase" not defined 
+2016/01/23 17:05:16 [router.go:879] [C] the request url is  /admin/ssh/list 
+2016/01/23 17:05:16 [router.go:880] [C] Handler crashed with error can't find templatefile in the path:admin/ssh/list.html 
+2016/01/23 17:05:16 [router.go:886] [C] /usr/local/Cellar/go/1.4.2/libexec/src/runtime/asm_amd64.s:401 
+2016/01/23 17:05:16 [router.go:886] [C] /usr/local/Cellar/go/1.4.2/libexec/src/runtime/panic.go:387 
+2016/01/23 17:05:16 [router.go:886] [C] /Users/zengningzhong/Documents/souche/go/src/github.com/astaxie/beego/controller.go:208 
+2016/01/23 17:05:16 [router.go:886] [C] /Users/zengningzhong/Documents/souche/go/src/github.com/astaxie/beego/controller.go:179 
+2016/01/23 17:05:16 [router.go:886] [C] /Users/zengningzhong/Documents/souche/go/src/github.com/astaxie/beego/router.go:810 
+2016/01/23 17:05:16 [router.go:886] [C] /usr/local/Cellar/go/1.4.2/libexec/src/net/http/server.go:1703 
+2016/01/23 17:05:16 [router.go:886] [C] /usr/local/Cellar/go/1.4.2/libexec/src/net/http/server.go:1204 
+2016/01/23 17:05:16 [router.go:886] [C] /usr/local/Cellar/go/1.4.2/libexec/src/runtime/asm_amd64.s:2232 
+2016/01/23 17:06:45 [main.go:14] [I] ============================================================== 
+2016/01/23 17:06:45 [main.go:15] [I] path=> /admin/ssh/list 
+2016/01/23 17:06:45 [main.go:16] [I] params=> map[] 
+2016/01/23 17:06:45 [template.go:153] [D] parse template err: layout/main_sidebar.html template: layout/main_sidebar.html:210: function "imgBase" not defined 
+2016/01/23 17:06:45 [router.go:879] [C] the request url is  /admin/ssh/list 
+2016/01/23 17:06:45 [router.go:880] [C] Handler crashed with error runtime error: invalid memory address or nil pointer dereference 
+2016/01/23 17:06:45 [router.go:886] [C] /usr/local/Cellar/go/1.4.2/libexec/src/runtime/asm_amd64.s:401 
+2016/01/23 17:06:45 [router.go:886] [C] /usr/local/Cellar/go/1.4.2/libexec/src/runtime/panic.go:387 
+2016/01/23 17:06:45 [router.go:886] [C] /usr/local/Cellar/go/1.4.2/libexec/src/runtime/panic.go:42 
+2016/01/23 17:06:45 [router.go:886] [C] /usr/local/Cellar/go/1.4.2/libexec/src/runtime/sigpanic_unix.go:26 
+2016/01/23 17:06:45 [router.go:886] [C] /usr/local/Cellar/go/1.4.2/libexec/src/html/template/template.go:99 
+2016/01/23 17:06:45 [router.go:886] [C] /usr/local/Cellar/go/1.4.2/libexec/src/html/template/template.go:88 
+2016/01/23 17:06:45 [router.go:886] [C] /Users/zengningzhong/Documents/souche/go/src/github.com/astaxie/beego/controller.go:237 
+2016/01/23 17:06:45 [router.go:886] [C] /Users/zengningzhong/Documents/souche/go/src/github.com/astaxie/beego/controller.go:179 
+2016/01/23 17:06:45 [router.go:886] [C] /Users/zengningzhong/Documents/souche/go/src/github.com/astaxie/beego/router.go:810 
+2016/01/23 17:06:45 [router.go:886] [C] /usr/local/Cellar/go/1.4.2/libexec/src/net/http/server.go:1703 
+2016/01/23 17:06:45 [router.go:886] [C] /usr/local/Cellar/go/1.4.2/libexec/src/net/http/server.go:1204 
+2016/01/23 17:06:45 [router.go:886] [C] /usr/local/Cellar/go/1.4.2/libexec/src/runtime/asm_amd64.s:2232 
+2016/01/23 17:07:54 [main.go:14] [I] ============================================================== 
+2016/01/23 17:07:54 [main.go:15] [I] path=> /admin/ssh/list 
+2016/01/23 17:07:54 [main.go:16] [I] params=> map[] 
+2016/01/23 17:07:54 [template.go:153] [D] parse template err: layout/main_sidebar.html template: layout/main_sidebar.html:210: function "imgBase" not defined 
+2016/01/23 17:07:54 [router.go:879] [C] the request url is  /admin/ssh/list 
+2016/01/23 17:07:54 [router.go:880] [C] Handler crashed with error runtime error: invalid memory address or nil pointer dereference 
+2016/01/23 17:07:54 [router.go:886] [C] /usr/local/Cellar/go/1.4.2/libexec/src/runtime/asm_amd64.s:401 
+2016/01/23 17:07:54 [router.go:886] [C] /usr/local/Cellar/go/1.4.2/libexec/src/runtime/panic.go:387 
+2016/01/23 17:07:54 [router.go:886] [C] /usr/local/Cellar/go/1.4.2/libexec/src/runtime/panic.go:42 
+2016/01/23 17:07:54 [router.go:886] [C] /usr/local/Cellar/go/1.4.2/libexec/src/runtime/sigpanic_unix.go:26 
+2016/01/23 17:07:54 [router.go:886] [C] /usr/local/Cellar/go/1.4.2/libexec/src/html/template/template.go:99 
+2016/01/23 17:07:54 [router.go:886] [C] /usr/local/Cellar/go/1.4.2/libexec/src/html/template/template.go:88 
+2016/01/23 17:07:54 [router.go:886] [C] /Users/zengningzhong/Documents/souche/go/src/github.com/astaxie/beego/controller.go:237 
+2016/01/23 17:07:54 [router.go:886] [C] /Users/zengningzhong/Documents/souche/go/src/github.com/astaxie/beego/controller.go:179 
+2016/01/23 17:07:54 [router.go:886] [C] /Users/zengningzhong/Documents/souche/go/src/github.com/astaxie/beego/router.go:810 
+2016/01/23 17:07:54 [router.go:886] [C] /usr/local/Cellar/go/1.4.2/libexec/src/net/http/server.go:1703 
+2016/01/23 17:07:54 [router.go:886] [C] /usr/local/Cellar/go/1.4.2/libexec/src/net/http/server.go:1204 
+2016/01/23 17:07:54 [router.go:886] [C] /usr/local/Cellar/go/1.4.2/libexec/src/runtime/asm_amd64.s:2232 
+2016/01/23 17:08:11 [main.go:14] [I] ============================================================== 
+2016/01/23 17:08:11 [main.go:15] [I] path=> /admin/ssh/list 
+2016/01/23 17:08:11 [main.go:16] [I] params=> map[] 
+2016/01/23 17:08:11 [router.go:854] [D] | GET        | /admin/ssh/list                          | 233.738062ms     | match      | /admin/ssh/list                          | 
+2016/01/23 17:08:11 [main.go:14] [I] ============================================================== 
+2016/01/23 17:08:11 [main.go:15] [I] path=> /admin/ssh/index_v1.html 
+2016/01/23 17:08:11 [main.go:16] [I] params=> map[] 
+2016/01/23 17:08:11 [admin.go:282] [I] agentId index_v1.html 
+2016/01/23 17:08:11 [main.go:14] [I] ============================================================== 
+2016/01/23 17:08:11 [main.go:15] [I] path=> /admin/ssh/img/profile_small.jpg 
+2016/01/23 17:08:11 [main.go:16] [I] params=> map[] 
+2016/01/23 17:08:11 [main.go:14] [I] ============================================================== 
+2016/01/23 17:08:11 [main.go:15] [I] path=> /admin/ssh/img/a7.jpg 
+2016/01/23 17:08:11 [main.go:16] [I] params=> map[] 
+2016/01/23 17:08:12 [main.go:14] [I] ============================================================== 
+2016/01/23 17:08:12 [main.go:15] [I] path=> /admin/ssh/img/a4.jpg 
+2016/01/23 17:08:12 [main.go:16] [I] params=> map[] 
+2016/01/23 17:08:12 [router.go:854] [D] | GET        | /admin/ssh/index_v1.html                 | 80.9997ms        | match      | /admin/ssh/:agentId                      | 
+2016/01/23 17:08:12 [router.go:854] [D] | GET        | /admin/ssh/img/a7.jpg                    | 73.918167ms      | notmatch   | 
+2016/01/23 17:08:12 [router.go:854] [D] | GET        | /admin/ssh/img/profile_small.jpg         | 85.987356ms      | notmatch   | 
+2016/01/23 17:08:12 [router.go:854] [D] | GET        | /admin/ssh/img/a4.jpg                    | 104.983267ms     | notmatch   | 
+2016/01/23 17:08:13 [main.go:14] [I] ============================================================== 
