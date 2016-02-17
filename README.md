@@ -1,5 +1,6 @@
-# violence
-api搭建 ssh登录操作(已经停止更新，转revel框架开发)
+# beego
+#### violence 
+beego web framework , 功能: api搭建 ssh登录操作(已经停止更新，转revel框架开发)
 
 # Getting started
 go get github.com/11101171/violence
